@@ -1,0 +1,25 @@
+<html>
+<div id="chartContainer">
+<script src="http://d3js.org/d3.v4.min.js"></script>
+<script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+  <script type="text/javascript">
+    var svg = dimple.newSvg("#chartContainer", 1000, 800);
+    d3.csv("donut chart.csv", function (data) {
+      var myChart = new dimple.chart(svg, data);
+      myChart.setBounds(20, 20, 960, 760)
+      myChart.addMeasureAxis("p", "Number");
+      var ring = myChart.addSeries("Topic", dimple.plot.pie);
+      ring.innerRadius = "50%";
+      myChart.addLegend(800, 20, 20, 500, "left");
+      myChart.assignColor("Trash/Recycling", "e2bba5", "e2bba5");
+      myChart.assignColor("Street Cleaning", "d68660", "d68660");
+      myChart.assignColor("Snow problem", "c4582e", "c4582e");
+      myChart.assignColor("Unsatisfactory Living Conditions", "a2381b", "a2381b");
+      myChart.assignColor("New Tree Requests", "7e3623", "7e3623");
+      myChart.assignColor("Street Lights", "733b21", "733b21");
+      myChart.assignColor("Needle Pickup", "471400", "471400");
+      myChart.draw();
+    });
+  </script>
+</div>
+</html>

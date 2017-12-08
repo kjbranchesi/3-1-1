@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Boston 3-1-1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ODIN by Designova - Responsive HTML5 template">
+<meta name="author" content="Designova">
+
+<!-- Standard Favicon-->
+<link rel="shortcut icon" href="odin-v1.5/site/images/favicon/favicon.ico">
+
+
+<!-- Bootstrap CSS Files -->
+<link href="odin-v1.5/site/bootstrap/css/bootstrap.css" rel="stylesheet">
+<!-- Custom Fonts Setup via Font-face CSS3 -->
+<link href="odin-v1.5/site/fonts/fonts.css" rel="stylesheet">
+<!-- CSS files for plugins -->
+<link href="odin-v1.5/site/stylesheets/animate.css" rel="stylesheet">
+<link href="odin-v1.5/site/stylesheets/slimmenu.css" rel="stylesheet">
+<link href="odin-v1.5/site/stylesheets/owl.carousel.css" rel="stylesheet">
+<link href="odin-v1.5/site/stylesheets/owl.theme.css" rel="stylesheet">
+<link href="odin-v1.5/site/stylesheets/venobox.css" rel="stylesheet" />
+<link href="odin-v1.5/site/stylesheets/slidingmenu.css" rel="stylesheet">
+<!-- Main Template Styles -->
+<link href="odin-v1.5/site/stylesheets/main.css" rel="stylesheet">
+<!-- Main Template BG Images -->
+<link href="odin-v1.5/site/stylesheets/main-bg.css" rel="stylesheet">
+<!-- Main Template Responsive Styles -->
+<link href="odin-v1.5/site/stylesheets/main-responsive.css" rel="stylesheet">
+<!-- Main Template Retina Optimizaton Rules -->
+<link href="odin-v1.5/site/stylesheets/main-retina.css" rel="stylesheet">
+<!-- LESS stylesheet for managing color presets -->
+<link rel="stylesheet/less" type="text/css" href="odin-v1.5/site/less/color.less">
+<!-- LESS JS engine-->
+<script src="odin-v1.5/site/less/less-1.5.0.min.js"></script>
+<!-- Google Web Fonts-->
+<link href='//fonts.googleapis.com/css?family=Raleway:400,300,700,900%7COpen+Sans:400,300,700,800%7CMontserrat:400,700' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+
+
+<body>
+
+  <!-- Preloader
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div id="preloader">
+    <div id="status"></div>
+  </div>
+
+
+
+<!-- Mobile only Navigation : starts -->
+<!-- Navigation Trigger Button -->
+<div id="sm-trigger" class="hidden-lg"></div>
+</nav>
+<!-- Mobile only  Navigation : ends -->
+
+
+
+
+<!-- Master Wrap : starts -->
+<section id="mastwrap">
+
+
+
+
+
+
+<section class="white-bg">
+
+<!-- masthead-section (this nav bar is visible only on home page) : starts -->
+		<header id="intro-header" class="intro-header visible-lg">
+			<div class="container">
+				<div class="row">
+						<article>
+						    	<ul class="standard-nav  standard-nav-dark-text visible-lg">
+								<li><a href="index.html" align="center">Home</a></li>
+							</ul>
+						</article>
+				</div>
+			</div>
+		</header>
+		<!-- masthead-section:ends -->
+
+
+				<div class="white-bg project-page-caps text-center">
+						<h2 class="dark pad-top-half">3-1-1 Calls </h2>
+						<h3 class="dark"><span>BREAKOUT OBSERVATIONS</span></h3>
+				</div>
+
+
+
+</section>
+
+
+
+
+<!-- masthead-section (this nav bar is initially hidden but will be visible only on inner pages) : starts -->
+<header id="standard-header" class="standard-header">
+
+	<div class="container">
+		<div class="row">
+				<article class="col-md-3 text-left">
+				    	<img alt="odin" title="odin" class="main-logo img-responsive" src="odin-v1.5/site/images/logo-dark.png"/>
+				</article>
+				<article class="col-md-9 text-right">
+				    	<ul class="standard-nav standard-nav-dark-text visible-lg">
+						<li><a href="odin-v1.5/site/index.html" class="highlighted" id="intro-linker">Home</a></li>
+					</ul>
+				</article>
+		</div>
+	</div>
+
+</header>
+<!-- masthead-section:ends -->
+
+
+
+
+<!-- inner-section : starts -->
+	<section id="project-page-carousel-wrap" class="inner-section project-page-carousel-wrap white-bg">
+
+<div id="chartContainer" align="center">
+  <script src="http://d3js.org/d3.v4.min.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+  <script type="text/javascript">
+    var svg = dimple.newSvg("#chartContainer", 1000, 600);
+    d3.csv("needle.csv", function (data) {
+      data = dimple.filterData(data, "Topic", ["Unsatisfactory Living Conditions", "Needle Pickup"])
+      var myChart = new dimple.chart(svg, data);
+      myChart.setBounds(60, 30, 905, 505);
+      var x = myChart.addCategoryAxis("x", "Year");
+      x.addOrderRule("Year");
+      myChart.addMeasureAxis("y", "Amount");
+      var s = myChart.addSeries("Topic", dimple.plot.area);
+      s.interpolation = "cardinal";
+      myChart.addLegend(280, 3, 300, 20, "right");
+      myChart.assignColor("Unsatisfactory Living Conditions", "blue", "blue");
+      myChart.assignColor("Needle Pickup", "red", "red");
+      myChart.draw();
+    });
+  </script>
+</div>
+</section>
+	<!-- inner-section : ends -->
+						<article class="col-md-8 col-md-offset-2 main-caps text-center">
+						<h6 class="dark">While the need for needle pickup has tripled since 2015, the complaints on unsatisfactory living conditions have gone down.<br><br>
+</h6>
+					</article>
+
+
+
+
+
+
+<section id="about" class="page about remove-pad-top white-bg">
+
+<div class="container pad-top-half">
+
+			<div class="item about-carousel-item">
+				<div class="row">
+					<article class="col-md-8 col-md-offset-2 main-caps text-center">
+						<div class="liner color-bg"></div>
+						<div class="welcome-button">
+							<a class="btn btn-odin btn-odin-color" href="post06.html">></a>
+						</div>
+
+					</article>
+				</div>
+			</div>
+			<!-- item:ends -->
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- page-section : starts -->
+<footer id="mastfoot" class="mastfoot white-bg">
+
+
+
+
+<!-- inner-section:starts --><!-- inner-section:ends -->
+
+</footer>
+
+
+
+</section>
+<!-- Master Wrap : ends -->
+
+
+
+<!-- Core JS Libraries -->
+<script src="odin-v1.5/site/javascripts/libs/common.js"></script>
+<script src="odin-v1.5/site/bootstrap/js/bootstrap.js" ></script>
+<!-- JS Custom Codes -->
+<script src="odin-v1.5/site/javascripts/custom/custom-init.js" ></script>
+<script src="odin-v1.5/site/javascripts/custom/main.js" ></script>
+
+
+
+</body>
+</html>

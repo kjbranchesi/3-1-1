@@ -1,0 +1,23 @@
+html>
+<div id="chartContainer">
+  <script src="http://d3js.org/d3.v4.min.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+  <script type="text/javascript">
+    var svg = dimple.newSvg("#chartContainer", 590, 400);
+    d3.csv("final_new.csv", function (data) {
+      data = dimple.filterData(data, "Place", ["Brighton", "South Boston"])
+      var myChart = new dimple.chart(svg, data);
+      myChart.setBounds(60, 30, 505, 305);
+      var x = myChart.addCategoryAxis("x", "Year");
+      x.addOrderRule("Place");
+      myChart.addMeasureAxis("y", "Amount");
+      var s = myChart.addSeries("Place", dimple.plot.line);
+      s.interpolation = "step";
+      myChart.addLegend(60, 10, 500, 20, "right");
+      myChart.assignColor("Brighton", "blue", "blue");
+      myChart.assignColor("South Boston", "red", "red");
+      myChart.draw();
+    });
+  </script>
+</div>
+</html>

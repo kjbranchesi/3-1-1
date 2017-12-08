@@ -1,0 +1,21 @@
+<html>
+<div id="chartContainer">
+  <script src="http://d3js.org/d3.v4.min.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+  <script type="text/javascript">
+    var svg = dimple.newSvg("#chartContainer", 1000, 600);
+    d3.csv("needle.csv", function (data) {
+      data = dimple.filterData(data, "Topic", ["Unsatisfactory Living Conditions", "Needle Pickup"])
+      var myChart = new dimple.chart(svg, data);
+      myChart.setBounds(60, 30, 905, 505);
+      var x = myChart.addCategoryAxis("x", "Year");
+      x.addOrderRule("Year");
+      myChart.addMeasureAxis("y", "Amount");
+      var s = myChart.addSeries("Topic", dimple.plot.area);
+      s.interpolation = "cardinal";
+      myChart.addLegend(280, 3, 300, 20, "right");
+      myChart.draw();
+    });
+  </script>
+</div>
+</html>
